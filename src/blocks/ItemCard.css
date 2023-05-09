@@ -12,8 +12,8 @@
   max-width: 90px;
   width: 100%;
   border-radius: 4px;
-  /* padding: 2px 12px; */
-  margin: 16px auto 0;
+  padding: 2px 12px;
+
   color: rgba(0, 0, 0, 0.6);
   font-size: 16px;
   line-height: 20px;
@@ -32,4 +32,8 @@
   gap: 17px;
   justify-content: center;
   margin-top: 34px;
+}
+.card {
+  display: flex;
+  justify-content: center;
 }

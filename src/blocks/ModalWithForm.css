@@ -45,24 +45,7 @@
   margin: 0 0 24px 0;
   font-size: 16px;
 }
-.modal__content_preview {
-  max-width: 498px;
-  width: 100%;
-  height: 610px;
-  padding: 0;
-}
-.modal__image-preview {
-  max-width: 498px;
-  width: 100%;
-  height: 498px;
-  border-radius: 20px 20px 0 0;
-}
-.modal__preview-text {
-  padding: 20px 0 0 32px;
-  gap: 12px;
-  display: flex;
-  flex-direction: column;
-}
+
 .modal__labels {
   display: flex;
   flex-direction: column;

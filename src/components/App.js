@@ -9,7 +9,6 @@ import ItemModal from "./ItemModal";
 import { getWeatherForecast, parseWeatherData } from "../utils/weatherApi";
 
 function App() {
-  const weatherTemp = "75F";
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
   const [temp, setTemp] = useState(0);
