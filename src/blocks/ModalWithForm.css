@@ -10,7 +10,7 @@
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.modal_content {
+.modal__content {
   background-color: white;
   max-width: 496px;
   width: 100%;
@@ -29,6 +29,7 @@
   top: 23px;
   right: 31px;
   border: none;
+  cursor: pointer;
 }
 .modal__button-submit {
   height: 36px;
@@ -40,6 +41,7 @@
   line-height: 20px;
   font-size: 16px;
   border: none;
+  cursor: pointer;
 }
 .modal__title {
   margin: 0 0 24px 0;
@@ -76,6 +78,7 @@
   width: 16px;
   gap: 8px;
   margin: 2px 0 0;
+  cursor: pointer;
 }
 .modal__button {
   display: flex;

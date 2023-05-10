@@ -3,14 +3,14 @@ import "../blocks/ItemCard.css";
 const ItemCard = ({ item, onSelectCard }) => {
   return (
     <div className="card">
-      <div className="card_container">
+      <div className="card__container">
         <img
           src={item.link}
-          className="card_image"
+          className="card__image"
           onClick={() => onSelectCard(item)}
         />
       </div>
-      <div className="card_name">{item.name}</div>
+      <div className="card__name">{item.name}</div>
     </div>
   );
 };

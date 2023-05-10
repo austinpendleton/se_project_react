@@ -35,3 +35,7 @@
   line-height: 24px;
   font-weight: 700;
 }
+.header__button:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
