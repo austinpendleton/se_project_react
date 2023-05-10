@@ -1,12 +1,6 @@
 import "../blocks/ModalWithForm.css";
 
-const ModalWithForm = ({
-  children,
-  buttonText = "Add garmet",
-  title,
-  onClose,
-  name,
-}) => {
+const ModalWithForm = ({ children, buttonText, title, onClose, name }) => {
   return (
     <div className={`modal modal_type_${name}`}>
       <div className="modal__content">
