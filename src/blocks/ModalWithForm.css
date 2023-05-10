@@ -29,7 +29,10 @@
   top: 23px;
   right: 31px;
   border: none;
+}
+.modal__button-close:hover {
   cursor: pointer;
+  opacity: 0.6;
 }
 .modal__button-submit {
   height: 36px;
@@ -41,7 +44,10 @@
   line-height: 20px;
   font-size: 16px;
   border: none;
+}
+.modal__button-submit:hover {
   cursor: pointer;
+  opacity: 0.6;
 }
 .modal__title {
   margin: 0 0 24px 0;
