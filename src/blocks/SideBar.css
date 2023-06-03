@@ -1,0 +1,34 @@
+.sidebar {
+  max-width: 100%;
+  display: flex;
+  align-self: flex-start;
+  flex-wrap: nowrap;
+  flex-flow: row;
+}
+.sidebar__container {
+  color: white;
+  padding: 0 0 0 40px;
+  margin: 0 0 0 150px;
+  font-size: 36px;
+  font-weight: 700;
+}
+.sidebar__name {
+  position: absolute;
+  top: 120px;
+  left: 150px;
+  height: 25px;
+  width: 157px;
+  color: #000;
+  font-size: 20px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 25px;
+}
+.sidebar__avatar {
+  position: absolute;
+  top: 100px;
+  left: 60px;
+  padding: 8px 16px 0 0;
+  box-sizing: border-box;
+  height: 56px;
+}

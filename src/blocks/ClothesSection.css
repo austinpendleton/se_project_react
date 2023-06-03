@@ -1,0 +1,40 @@
+.clothes {
+  padding: 25px;
+  width: 100%;
+}
+.clothes__container {
+  display: flex;
+  width: 100%;
+}
+
+.clothes__button {
+  margin: 0 0 2px 120px;
+  border: none;
+  position: absolute;
+  top: 118px;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 20px;
+  font-weight: 700px;
+  font-style: normal;
+  line-height: 25px;
+  background-color: white;
+  cursor: pointer;
+}
+.clothes__title {
+  position: absolute;
+  top: 120px;
+  width: 94px;
+  height: 25px;
+  font-size: 20px;
+  line-height: 25px;
+  font-style: normal;
+  color: #000;
+}
+.clothes__list {
+  display: grid;
+  justify-self: end;
+  grid-gap: 20px;
+  padding: 0;
+  grid-template-columns: repeat(3, 328px);
+  margin: 40px 0 0 0;
+}
