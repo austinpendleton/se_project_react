@@ -10,9 +10,7 @@ import ItemModal from "./ItemModal";
 import Profile from "./Profile";
 import DeleteConfirmModal from "./DeleteConfirmModal";
 import AddItemModal from "./AddItemModal";
-import CurrentTemperatureUnitContext, {
-  currentTemperatureUnitContext,
-} from "../contexts/CurrentTemperatureUnitContext";
+import { CurrentTemperatureUnitContext } from "../contexts/CurrentTemperatureUnitContext";
 import { getWeatherForecast, parseWeatherData } from "../utils/weatherApi";
 import * as api from "../utils/api";
 
@@ -68,6 +66,12 @@ function App() {
       .then((data) => {
         const temperature = parseWeatherData(data);
         setTemp(temperature);
+        api
+          .getItemList()
+          .then((items) => {
+            setClothingItems(items);
+          })
+          .catch((error) => console.log(error));
       })
       .catch((error) => {
         console.log(error);
@@ -125,7 +129,6 @@ function App() {
           <Header onCreateModal={handleCreateModal} />
           <Switch>
             <Route
-              exact="true"
               path="/"
               element={
                 <Main
