@@ -128,26 +128,21 @@ function App() {
         <div>
           <Header onCreateModal={handleCreateModal} />
           <Switch>
-            <Route
-              path="/"
-              element={
-                <Main
-                  weatherTemp={temp}
-                  onSelectCard={handleSelectedCard}
-                  clothingItems={clothingItems}
-                />
-              }
-            />
-            <Route
-              path="/profile"
-              element={
-                <Profile
-                  items={clothingItems}
-                  onSelectCard={handleSelectedCard}
-                  onCreateModal={handleCreateModal}
-                />
-              }
-            />
+            <Route path="/">
+              <Main
+                weatherTemp={temp}
+                onSelectCard={handleSelectedCard}
+                clothingItems={clothingItems}
+              />
+            </Route>
+
+            <Route path="/profile">
+              <Profile
+                items={clothingItems}
+                onSelectCard={handleSelectedCard}
+                onCreateModal={handleCreateModal}
+              />
+            </Route>
           </Switch>
           <Footer />
           {activeModal === "create" && (

@@ -2,7 +2,7 @@ import React from "react";
 import ItemCard from "./ItemCard";
 import "../blocks/ClothesSection.css";
 
-const ClothesSection = ({ cards, onCardClick, onAddClick }) => {
+const ClothesSection = ({ cards, onCardClick, onAddNewClick }) => {
   return (
     <div className="clothes">
       <div className="clothes__container">
@@ -12,15 +12,15 @@ const ClothesSection = ({ cards, onCardClick, onAddClick }) => {
         className="clothes__button"
         type="button"
         aria-label="Add"
-        onClick={onAddClick}
+        onClick={onAddNewClick}
       >
         + Add New
       </button>
-      <ul className="clothes__list">
+      {/* <ul className="clothes__list">
         {cards.map((card) => (
           <ItemCard key={card._id} item={card} onSelectCard={onCardClick} />
         ))}
-      </ul>
+      </ul> */}
     </div>
   );
 };
