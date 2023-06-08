@@ -1,83 +1,45 @@
 .switch {
   display: flex;
-  grid-column: 1/1;
-  grid-row: 1/1;
-}
-.switch-input {
-  height: 0px;
-  width: 0px;
-  border: none;
-  visibility: hidden;
-  margin: 0;
-  padding: 0;
-}
-.switch-label {
-  display: flex;
-  cursor: pointer;
-  background: #fff;
   position: relative;
-  height: 28px;
-  width: 56px;
+}
+.switch__box {
+  border: 2px solid black;
+  height: 30px;
+  width: 50px;
+  border-radius: 25px;
+  appearance: none;
+}
+.switch__slider {
+  height: 30px;
+  width: 30px;
   border-radius: 20px;
-  transition: background-color 0.2s;
-  border: 2px solid #7e7e7e;
-  margin: 12px 0 0 0;
-}
-.switch__container {
-  height: 100px;
-  width: 56px;
-  font-size: 14px;
-  font-weight: 700;
-}
-.switch-button {
+  color: white;
+  cursor: pointer;
   position: absolute;
-  left: 2px;
-  height: 28px;
-  width: 28px;
-  transition: 0.2s;
-  background: #000;
-  z-index: 0;
-  border-radius: 45px;
-  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.5);
+  text-align: center;
+  background-color: black;
 }
-.switch-label:active .switch-button {
-  width: 56px;
+.switch__slider-F {
+  top: 3px;
+  left: 28px;
 }
-.switch-input:checked + .switch-label .switch-button {
-  transform: translate(-100%);
-  left: calc(100% - 1px);
-}
-.switch__active {
-  color: #fff;
-  font-size: 15px;
+.switch__slider-C {
+  top: 3px;
+  left: 5px;
 }
 .switch__temp-C {
-  display: flex;
   position: absolute;
-  top: 0%;
-  bottom: 0%;
-  left: 35px;
-  align-items: center;
-  text-align: center;
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 17px;
-  font-style: normal;
-  color: rgba(0, 0, 0, 0.5);
-  z-index: 10;
+  top: -7px;
+  left: 14px;
+  color: white;
 }
 .switch__temp-F {
-  display: flex;
   position: absolute;
-  top: 0%;
-  bottom: 0%;
-  left: 35px;
-  align-items: center;
-  text-align: center;
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 17px;
-  font-style: normal;
-  color: rgba(0, 0, 0, 0.5);
-  z-index: 10;
+  top: -7px;
+  left: 38px;
+  color: white;
+}
+.switch__active {
+  font-size: 16px;
+  color: white;
 }

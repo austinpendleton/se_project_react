@@ -1,10 +1,10 @@
 import "../blocks/Main.css";
-import { defaultClothingItems } from "../utils/constants";
+
 import WeatherCard from "./WeatherCard";
 import ItemCard from "./ItemCard";
 import React, { useMemo } from "react";
 
-function Main({ weatherTemp, onSelectCard }) {
+function Main({ weatherTemp, onSelectCard, clothingItems }) {
   const getWeatherType = () => {
     if (weatherTemp >= 86) {
       return "hot";
@@ -16,7 +16,7 @@ function Main({ weatherTemp, onSelectCard }) {
   };
   const weatherType = getWeatherType();
 
-  const filteredCards = defaultClothingItems.filter((item) => {
+  const filteredCards = clothingItems.filter((item) => {
     return item.weather.toLowerCase() === weatherType;
   });
 

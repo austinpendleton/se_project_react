@@ -33,3 +33,19 @@
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
 }
+.modal__button-delete {
+  width: 101px;
+  height: 24px;
+  border: none;
+  color: #ff4d00;
+  background-color: #fff;
+  cursor: pointer;
+  margin-top: 15px;
+  padding-right: 32px;
+  display: flex;
+  align-items: center;
+
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+}

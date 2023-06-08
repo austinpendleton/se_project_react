@@ -7,10 +7,10 @@
 }
 .card__name {
   text-align: center;
-  position: absolute;
-  top: 30px;
-  max-width: 90px;
-  width: 100%;
+  position: relative;
+  top: 58px;
+  max-width: 200px;
+
   border-radius: 4px;
   padding: 2px 12px;
 
@@ -30,13 +30,15 @@
 }
 .card__items {
   display: flex;
-  position: relative;
+
   flex-wrap: wrap;
-  gap: 17px;
+  gap: 20px 17px;
   justify-content: center;
-  margin-top: 34px;
+  margin: 34px 0 0 0;
 }
 .card {
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column-reverse;
 }

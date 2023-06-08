@@ -1,11 +1,9 @@
 .weather {
   position: relative;
-  margin-bottom: 40px;
-  margin-top: 33px;
 }
-.weather_info {
+.weather__temp {
   position: absolute;
-  top: 16px;
+  top: 10px;
   left: 16px;
   color: white;
   font-size: 36px;
@@ -13,5 +11,4 @@
 }
 .weather_image {
   width: 100%;
-  margin-bottom: 0;
 }

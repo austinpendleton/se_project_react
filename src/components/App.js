@@ -78,10 +78,11 @@ function App() {
       });
   }, []);
   const handleAddItem = ({ name, link, weatherType }) => {
+    const item = { name, imageUrl: link, weather: weatherType };
     api
-      .addItems({ name, link, weather: weatherType })
+      .addItems(item)
       .then((res) => {
-        setClothingItems([res, ...clothingItems]);
+        setClothingItems([item, ...clothingItems]);
         handleCloseModal();
       })
       .catch((error) => {
