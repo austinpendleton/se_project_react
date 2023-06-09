@@ -130,7 +130,7 @@ function App() {
         <div>
           <Header onCreateModal={handleCreateModal} />
           <Switch>
-            <Route path="/">
+            <Route exact path="/">
               <Main
                 weatherTemp={temp}
                 onSelectCard={handleSelectedCard}
@@ -140,7 +140,7 @@ function App() {
 
             <Route path="/profile">
               <Profile
-                items={clothingItems}
+                cards={clothingItems}
                 onSelectCard={handleSelectedCard}
                 onCreateModal={handleCreateModal}
               />

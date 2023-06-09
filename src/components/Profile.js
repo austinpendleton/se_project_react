@@ -4,7 +4,7 @@ import ClothesSection from "./ClothesSection";
 import "../blocks/ItemCard.css";
 import ItemCard from "./ItemCard";
 
-function Profile({ cards, onCardClick, onCardDelete, onAddNewClick }) {
+const Profile = ({ cards, onCardClick, onCardDelete, onAddNewClick }) => (
   <div className="profile">
     <div className="profile__container">
       <div className="profile__sidebar">
@@ -12,7 +12,7 @@ function Profile({ cards, onCardClick, onCardDelete, onAddNewClick }) {
       </div>
       <div className="profile__clothes">
         <ClothesSection
-          sectionData={cards}
+          cards={cards}
           onAddNewClick={onAddNewClick}
           onCardClick={onCardClick}
           onCardDelete={onCardDelete}
@@ -34,7 +34,7 @@ function Profile({ cards, onCardClick, onCardDelete, onAddNewClick }) {
         </section>
       </div>
     </div>
-  </div>;
-}
+  </div>
+);
 
 export default Profile;

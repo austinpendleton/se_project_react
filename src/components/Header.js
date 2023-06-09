@@ -33,8 +33,12 @@ const Header = ({ onCreateModal }) => {
         </div>
         <NavLink to="/profile">
           <div className="header__name">Austin Pendleton</div>
-          <div>
-            <img src={headerAvatar} alt="avatar" />
+          <div className="header__avatar-logo">
+            <img
+              className="header__avatar-image"
+              src={headerAvatar}
+              alt="avatar"
+            />
           </div>
         </NavLink>
       </div>

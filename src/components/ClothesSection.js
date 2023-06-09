@@ -16,11 +16,11 @@ const ClothesSection = ({ cards, onCardClick, onAddNewClick }) => {
       >
         + Add New
       </button>
-      {/* <ul className="clothes__list">
+      <ul className="clothes__list">
         {cards.map((card) => (
           <ItemCard key={card._id} item={card} onSelectCard={onCardClick} />
         ))}
-      </ul> */}
+      </ul>
     </div>
   );
 };

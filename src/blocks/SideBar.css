@@ -5,13 +5,13 @@
   flex-wrap: nowrap;
   flex-flow: row;
 }
-.sidebar__container {
+/* .sidebar__container {
   color: white;
   padding: 0 0 0 40px;
   margin: 0 0 0 150px;
   font-size: 36px;
   font-weight: 700;
-}
+} */
 .sidebar__name {
   margin: 0;
   padding: 47px 0 0 0;
@@ -20,10 +20,11 @@
   font-weight: 700;
   font-style: normal;
   line-height: 25px;
+  align-self: center;
 }
 .sidebar__avatar {
   padding: 47px 16px 0 40px;
-  box-sizing: border-box;
+  align-self: center;
   height: 56px;
   width: 56px;
 }

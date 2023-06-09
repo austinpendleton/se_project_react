@@ -9,7 +9,6 @@
 }
 .header__logo {
   display: flex;
-
   align-items: center;
 }
 .header__avatar-logo {
@@ -28,9 +27,11 @@
   line-height: 25px;
   font-size: 20px;
   font-weight: 700;
+  cursor: pointer;
+}
+.header__link {
   color: #000;
   text-decoration: none;
-  cursor: pointer;
 }
 .header__button {
   margin-right: 20px;
@@ -40,9 +41,11 @@
   line-height: 24px;
   font-weight: 700;
 }
+.header__avatar-image {
+  height: 40px;
+  width: 40px;
+}
 .header__button:hover {
   cursor: pointer;
   opacity: 0.6;
-}
-.header__link {
 }
