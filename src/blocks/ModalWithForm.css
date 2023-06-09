@@ -96,3 +96,72 @@
   gap: 8px;
   margin-bottom: 34px;
 }
+.delete__confirmation {
+  height: 300px;
+  width: 670px;
+  position: absolute;
+  box-sizing: border-box;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  font-style: normal;
+  font-weight: 700;
+  padding: 60px;
+  border-radius: 8px;
+  background: #fff;
+  transform: translate(-50%, -50%);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.delete__confirmation p {
+  margin: 0;
+  font-size: 20px;
+}
+.delete__confirmation-buttons {
+  width: 138px;
+  margin: 40px;
+  left: 220px;
+  position: absolute;
+}
+.delete__confirmation_confirm {
+  font-size: 20px;
+  font-weight: 700;
+  width: fit-content;
+  padding: 0;
+  margin: 10px 0 0 0;
+  color: red;
+  border: none;
+  background-color: #fff;
+}
+.delete__button_confirm:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+.delete__button_cancel {
+  border: none;
+  margin: 24px 0 0 0;
+  padding: 0;
+  width: fit-content;
+  font-size: 20px;
+  font-weight: 700;
+  background-color: #fff;
+}
+.delete__button_cancel:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+.delete__confrimation-close {
+  background-image: url(../images/close-button.svg);
+  background-color: white;
+  border: none;
+  height: 16px;
+  width: 16px;
+  position: absolute;
+  right: 10px;
+  top: 22px;
+  margin-right: 20px;
+}
+.delete__confrimation-close:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}

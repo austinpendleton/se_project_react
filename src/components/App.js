@@ -16,6 +16,7 @@ import * as api from "../utils/api";
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
+  const [deleteModal, setDeleteModal] = useState(false);
   const [selectedCard, setSelectedCard] = useState(null);
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
   const [clothingItems, setClothingItems] = useState([]);
@@ -30,7 +31,7 @@ function App() {
   };
 
   const handleOpenConfirmModal = () => {
-    setActiveModal("delete");
+    setDeleteModal("delete");
   };
 
   const handleCloseConfirmModal = () => {
@@ -155,13 +156,13 @@ function App() {
           )}
           {activeModal === "preview" && (
             <ItemModal
-              selectedCard={selectedCard}
+              item={selectedCard}
               onClose={handleCloseModal}
               onDelete={handleOpenConfirmModal}
               handleOpenConfirmModal={handleOpenConfirmModal}
             />
           )}
-          {activeModal === "delete" && (
+          {deleteModal && (
             <DeleteConfirmModal
               handleDeleteItem={() => handleDeleteItem(selectedCard._id)}
               handleCloseConfirmModal={handleCloseConfirmModal}

@@ -13,11 +13,8 @@
   font-weight: 700;
 }
 .sidebar__name {
-  position: absolute;
-  top: 120px;
-  left: 150px;
-  height: 25px;
-  width: 157px;
+  margin: 0;
+  padding: 47px 0 0 0;
   color: #000;
   font-size: 20px;
   font-weight: 700;
@@ -25,10 +22,8 @@
   line-height: 25px;
 }
 .sidebar__avatar {
-  position: absolute;
-  top: 100px;
-  left: 60px;
-  padding: 8px 16px 0 0;
+  padding: 47px 16px 0 40px;
   box-sizing: border-box;
   height: 56px;
+  width: 56px;
 }
