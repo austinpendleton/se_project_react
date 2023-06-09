@@ -4,7 +4,7 @@ import ModalWithForm from "./ModalWithForm";
 
 const DeleteConfirmModal = ({ onClick, onDelete, card, onClose, onCancel }) => {
   const handleDeleteClick = () => {
-    onDelete(card._id);
+    onDelete(card.id);
   };
 
   return (
