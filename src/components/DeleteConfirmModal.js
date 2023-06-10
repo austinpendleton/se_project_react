@@ -2,9 +2,17 @@ import "../blocks/ModalWithForm.css";
 import closeButton from "../images/close-button.svg";
 import ModalWithForm from "./ModalWithForm";
 
-const DeleteConfirmModal = ({ onClick, onDelete, card, onClose, onCancel }) => {
-  const handleDeleteClick = () => {
-    onDelete(card.id);
+const DeleteConfirmModal = ({
+  handleCloseConfirmModal,
+  handleDeleteItem,
+  selectedCard,
+  card,
+  onClose,
+  onCancel,
+}) => {
+  const handleCancel = () => {
+    console.log(card);
+    handleCloseConfirmModal();
   };
 
   return (
@@ -18,7 +26,7 @@ const DeleteConfirmModal = ({ onClick, onDelete, card, onClose, onCancel }) => {
         <div className="delete__confirmation-buttons">
           <button
             className="delete__button_confirm"
-            onClick={handleDeleteClick}
+            onClick={() => handleDeleteItem(card._id)}
             aria-label="Confirm"
             type="button"
           >
@@ -26,7 +34,7 @@ const DeleteConfirmModal = ({ onClick, onDelete, card, onClose, onCancel }) => {
           </button>
           <button
             className="delete__button_cancel"
-            onClick={onCancel}
+            onClick={handleCancel}
             aria-label="Cancel"
             type="button"
           >

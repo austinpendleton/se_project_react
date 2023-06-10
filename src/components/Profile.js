@@ -4,7 +4,14 @@ import ClothesSection from "./ClothesSection";
 import "../blocks/ItemCard.css";
 import ItemCard from "./ItemCard";
 
-const Profile = ({ cards, onCardClick, onCardDelete, onAddNewClick }) => (
+const Profile = ({
+  cards,
+  onCardClick,
+  onCardDelete,
+  onAddNewClick,
+  onSelectCard,
+  onCreateModal,
+}) => (
   <div className="profile">
     <div className="profile__container">
       <div className="profile__sidebar">
@@ -13,6 +20,7 @@ const Profile = ({ cards, onCardClick, onCardDelete, onAddNewClick }) => (
       <div className="profile__clothes">
         <ClothesSection
           cards={cards}
+          onCreateModal={onCreateModal}
           onAddNewClick={onAddNewClick}
           onCardClick={onCardClick}
           onCardDelete={onCardDelete}
@@ -27,7 +35,7 @@ const Profile = ({ cards, onCardClick, onCardDelete, onAddNewClick }) => (
                 id={card.id}
                 weather={card.weather}
                 link={card.link}
-                onCardClick={onCardClick}
+                onSelectCard={onSelectCard}
               />
             ))}
           </ul>

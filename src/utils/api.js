@@ -36,11 +36,12 @@ export const addItems = ({ name, weather, imageUrl }) => {
   }).then(processServerResponse);
 };
 
-export const deleteItems = (id) => {
-  return fetch(`${BASE_URL}/iems/${id}`, {
+export const deleteItems = (card) => {
+  console.log(card);
+  return fetch(`${BASE_URL}/items/${card}`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
     },
-  }).then(processServerResponse);
+  }).then(_checkResponse);
 };

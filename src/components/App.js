@@ -166,7 +166,7 @@ function App() {
             <DeleteConfirmModal
               handleDeleteItem={() => handleDeleteItem(selectedCard._id)}
               handleCloseConfirmModal={handleCloseConfirmModal}
-              selectedCard={selectedCard}
+              card={selectedCard}
             />
           )}
         </div>
