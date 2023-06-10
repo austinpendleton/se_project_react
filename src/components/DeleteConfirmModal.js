@@ -3,46 +3,54 @@ import closeButton from "../images/close-button.svg";
 import ModalWithForm from "./ModalWithForm";
 
 const DeleteConfirmModal = ({
-  handleCloseConfirmModal,
-  handleDeleteItem,
-  selectedCard,
+  onClick,
+  onDelete,
   card,
   onClose,
-  onCancel,
+
+  handleCloseConfirmModal,
 }) => {
-  const handleCancel = () => {
+  const handleDeleteClick = () => {
     console.log(card);
+    const id = card.id;
+    console.log(id);
+    onDelete(id);
+    handleCloseConfirmModal();
+  };
+  const onCancel = () => {
     handleCloseConfirmModal();
   };
 
   return (
-    <ModalWithForm>
-      <div className="delete__confirmation">
-        <p>Are you sure you want to delete this item?</p>
-        <p className="delete__text-confirm">This action is irreversible.</p>
-        <button className="delete__confirmation-close" onClick={onClose}>
-          <img src={closeButton} alt="close-button" />
-        </button>
-        <div className="delete__confirmation-buttons">
-          <button
-            className="delete__button_confirm"
-            onClick={() => handleDeleteItem(card._id)}
-            aria-label="Confirm"
-            type="button"
-          >
-            Yes, delete item
+    <div className={`modal`}>
+      <div className="modal__content">
+        <div className="delete__confirmation">
+          <p>Are you sure you want to delete this item?</p>
+          <p className="delete__text-confirm">This action is irreversible.</p>
+          <button className="delete__confirmation-close" onClick={onClose}>
+            <img src={closeButton} alt="close-button" />
           </button>
-          <button
-            className="delete__button_cancel"
-            onClick={handleCancel}
-            aria-label="Cancel"
-            type="button"
-          >
-            Cancel
-          </button>
+          <div className="delete__confirmation-buttons">
+            <button
+              className="delete__button_confirm"
+              onClick={handleDeleteClick}
+              aria-label="Confirm"
+              type="button"
+            >
+              Yes, delete item
+            </button>
+            <button
+              className="delete__button_cancel"
+              onClick={onCancel}
+              aria-label="Cancel"
+              type="button"
+            >
+              Cancel
+            </button>
+          </div>
         </div>
       </div>
-    </ModalWithForm>
+    </div>
   );
 };
 

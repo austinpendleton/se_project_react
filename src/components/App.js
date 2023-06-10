@@ -92,8 +92,9 @@ function App() {
   };
 
   const handleDeleteItem = (id) => {
+    console.log(id);
     api.deleteItems(id).then(() => {
-      const filteredCards = clothingItems.filter((card) => card._id !== id);
+      const filteredCards = clothingItems.filter((card) => card.id !== id);
       setClothingItems(filteredCards);
       handleCloseModal();
       handleCloseConfirmModal();
@@ -164,9 +165,10 @@ function App() {
           )}
           {deleteModal && (
             <DeleteConfirmModal
-              handleDeleteItem={() => handleDeleteItem(selectedCard._id)}
+              onDelete={handleDeleteItem}
               handleCloseConfirmModal={handleCloseConfirmModal}
               card={selectedCard}
+              onClose={handleCloseModal}
             />
           )}
         </div>
