@@ -41,9 +41,6 @@ function App() {
     setSelectedCard(card);
   };
 
-  const closeAllModals = () => {
-    setActiveModal("");
-  };
   const handleToggleSwitchChange = () => {
     currentTemperatureUnit === "F"
       ? setCurrentTemperatureUnit("C")
@@ -81,12 +78,17 @@ function App() {
 
   const handleDeleteItem = (id) => {
     console.log(id);
-    api.deleteItems(id).then(() => {
-      const filteredCards = clothingItems.filter((card) => card.id !== id);
-      setClothingItems(filteredCards);
-      handleCloseModal();
-      handleCloseConfirmModal();
-    });
+    api
+      .deleteItems(id)
+      .then(() => {
+        const filteredCards = clothingItems.filter((card) => card.id !== id);
+        setClothingItems(filteredCards);
+        handleCloseModal();
+        handleCloseConfirmModal();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   useEffect(() => {

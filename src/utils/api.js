@@ -1,10 +1,4 @@
-function _checkResponse(res) {
-  if (res.ok) {
-    return res.json();
-  }
-  return Promise.reject("Error${res.status}");
-}
-const processServerResponse = (res) => {
+export const processServerResponse = (res) => {
   if (res.ok) {
     return res.json();
   }
@@ -42,5 +36,5 @@ export const deleteItems = (card) => {
     headers: {
       "Content-Type": "application/json",
     },
-  }).then(_checkResponse);
+  }).then(processServerResponse);
 };

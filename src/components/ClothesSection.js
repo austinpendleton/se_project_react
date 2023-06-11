@@ -18,7 +18,11 @@ const ClothesSection = ({ cards, onCardClick, onCreateModal }) => {
       </button>
       <ul className="clothes__list">
         {cards.map((card) => (
-          <ItemCard key={card._id} item={card} onSelectCard={onCardClick} />
+          <ItemCard
+            key={card?._id || card?.id}
+            item={card}
+            onSelectCard={onCardClick}
+          />
         ))}
       </ul>
     </div>

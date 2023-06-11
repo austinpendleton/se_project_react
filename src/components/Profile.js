@@ -32,12 +32,8 @@ const Profile = ({
             <ul className="cards__list">
               {cards.map((card) => (
                 <ItemCard
-                  key={card._id}
-                  name={card.name}
+                  key={card?._id || card?.id}
                   item={card}
-                  id={card.id}
-                  weather={card.weather}
-                  link={card.link}
                   onSelectCard={onSelectCard}
                 />
               ))}
