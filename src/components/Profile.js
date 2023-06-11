@@ -6,43 +6,47 @@ import ItemCard from "./ItemCard";
 
 const Profile = ({
   cards,
-  onCardClick,
   onCardDelete,
   onAddNewClick,
   onSelectCard,
   onCreateModal,
-}) => (
-  <div className="profile">
-    <div className="profile__container">
-      <div className="profile__sidebar">
-        <SideBar />
-      </div>
-      <div className="profile__clothes">
-        <ClothesSection
-          cards={cards}
-          onCreateModal={onCreateModal}
-          onAddNewClick={onAddNewClick}
-          onCardClick={onCardClick}
-          onCardDelete={onCardDelete}
-        />
-        <section className="cards">
-          <ul className="cards__list">
-            {cards.map((card) => (
-              <ItemCard
-                key={card._id}
-                name={card.name}
-                item={card}
-                id={card.id}
-                weather={card.weather}
-                link={card.link}
-                onSelectCard={onSelectCard}
-              />
-            ))}
-          </ul>
-        </section>
+}) => {
+  const handleCardClick = (item) => {
+    onSelectCard(item);
+  };
+  return (
+    <div className="profile">
+      <div className="profile__container">
+        <div className="profile__sidebar">
+          <SideBar />
+        </div>
+        <div className="profile__clothes">
+          <ClothesSection
+            cards={cards}
+            onCreateModal={onCreateModal}
+            onAddNewClick={onAddNewClick}
+            onCardClick={handleCardClick}
+            onCardDelete={onCardDelete}
+          />
+          <section className="cards">
+            <ul className="cards__list">
+              {cards.map((card) => (
+                <ItemCard
+                  key={card._id}
+                  name={card.name}
+                  item={card}
+                  id={card.id}
+                  weather={card.weather}
+                  link={card.link}
+                  onSelectCard={onSelectCard}
+                />
+              ))}
+            </ul>
+          </section>
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default Profile;

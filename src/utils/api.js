@@ -37,7 +37,6 @@ export const addItems = ({ name, weather, imageUrl }) => {
 };
 
 export const deleteItems = (card) => {
-  console.log(card);
   return fetch(`${BASE_URL}/items/${card}`, {
     method: "DELETE",
     headers: {

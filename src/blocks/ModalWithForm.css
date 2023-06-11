@@ -126,7 +126,7 @@
   position: absolute;
 }
 .delete__button_confirm {
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 700;
   width: fit-content;
   padding: 0;
@@ -153,7 +153,6 @@
   opacity: 0.6;
 }
 .delete__confirmation-close {
-  /* background-image: url(../images/close-button.svg); */
   background-color: white;
   border: none;
   height: 16px;
@@ -166,4 +165,18 @@
 .delete__confirmation-close:hover {
   opacity: 0.6;
   cursor: pointer;
+}
+.modal__content-delete {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: min-content;
+  padding: 20px;
+}
+.delete__text {
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }

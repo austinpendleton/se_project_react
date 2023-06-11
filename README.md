@@ -4,6 +4,18 @@
 
 This was our first project created as students at Practicum using React!
 
+**UPDATE 2.0**
+
+The app now has some features! You can now add and delete clothing items and the changes are now saved using an API. We have also introduced a toggle switch for changing the temperature unit so users can navigate through celsius or farenheit for the temperature.
+
+We have also started using React Router so you can now click a link on the upper right hand side of the app and you will be navigated to your "profile" page.
+
+While these changes may seem small, they make the app more integrative and improve user experience.
+
+---
+
+**UPDATE 1.0**
+
 The functionality at this point is pretty simple, we have a couple of modals that can functionally open.
 
 One modal is seen when clicking on one of the garmet pictures, the user can "preview" the image and is given the description of the image as well as the weather type that garmet is recommended to wear in.

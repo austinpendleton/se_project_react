@@ -5,7 +5,6 @@ import "../blocks/App.css";
 import Header from "./Header";
 import Main from "./Main";
 import Footer from "./Footer";
-import ModalWithForm from "./ModalWithForm";
 import ItemModal from "./ItemModal";
 import Profile from "./Profile";
 import DeleteConfirmModal from "./DeleteConfirmModal";
@@ -20,7 +19,6 @@ function App() {
   const [selectedCard, setSelectedCard] = useState(null);
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
   const [clothingItems, setClothingItems] = useState([]);
-  const [weatherData, setWeatherData] = useState({});
   const [temp, setTemp] = useState(0);
 
   const handleCreateModal = () => {
@@ -35,7 +33,7 @@ function App() {
   };
 
   const handleCloseConfirmModal = () => {
-    setActiveModal("");
+    setDeleteModal("");
   };
 
   const handleSelectedCard = (card) => {
@@ -52,16 +50,6 @@ function App() {
       : setCurrentTemperatureUnit("F");
   };
 
-  // useEffect(() => {
-  //   if (location.latitude && location.longitude) {
-  //     getWeatherForecast(location, apiKey)
-  //       .then((data) => {
-  //         // const temperature = parseWeatherData(data);
-  //         setTemp(parseWeatherData(data));
-  //       })
-  //       .catch((error) => console.log(error));
-  //   }
-  // }, []);
   useEffect(() => {
     getWeatherForecast()
       .then((data) => {
@@ -100,15 +88,6 @@ function App() {
       handleCloseConfirmModal();
     });
   };
-
-  // useEffect(() => {
-  //   api
-  //     .getItemList()
-  //     .then((items) => {
-  //       setClothingItems(items);
-  //     })
-  //     .catch((error) => console.log(error));
-  // }, []);
 
   useEffect(() => {
     const handleKeyDown = (evt) => {
