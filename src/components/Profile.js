@@ -29,7 +29,7 @@ const Profile = ({
             onCardDelete={onCardDelete}
           />
           <section className="cards">
-            <ul className="cards__list">
+            {/* <ul className="cards__list">
               {cards.map((card) => (
                 <ItemCard
                   key={card?._id || card?.id}
@@ -37,7 +37,7 @@ const Profile = ({
                   onSelectCard={onSelectCard}
                 />
               ))}
-            </ul>
+            </ul> */}
           </section>
         </div>
       </div>

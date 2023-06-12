@@ -63,8 +63,8 @@ function App() {
         console.log(error);
       });
   }, []);
-  const handleAddItem = ({ name, link, weatherType }) => {
-    const item = { name, imageUrl: link, weather: weatherType };
+  const handleAddItem = ({ name, link, weatherType, id }) => {
+    const item = { name, imageUrl: link, weather: weatherType, id };
     api
       .addItems(item)
       .then((res) => {
