@@ -64,7 +64,7 @@ function App() {
       });
   }, []);
   const handleAddItem = ({ name, link, weatherType, id }) => {
-    const item = { name, imageUrl: link, weather: weatherType, id };
+    const item = { name, imageUrl: link, weather: weatherType, id: 99 };
     api
       .addItems(item)
       .then((res) => {

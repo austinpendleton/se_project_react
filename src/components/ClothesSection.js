@@ -17,18 +17,13 @@ const ClothesSection = ({ cards, onCardClick, onCreateModal }) => {
         + Add New
       </button>
       <ul className="clothes__list">
-        {cards.map(
-          (card) => (
-            console.log(card),
-            (
-              <ItemCard
-                key={card?._id || card?.id}
-                item={card}
-                onSelectCard={onCardClick}
-              />
-            )
-          )
-        )}
+        {cards.map((card) => (
+          <ItemCard
+            key={card?._id || card?.id}
+            item={card}
+            onSelectCard={onCardClick}
+          />
+        ))}
       </ul>
     </div>
   );

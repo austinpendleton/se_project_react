@@ -28,17 +28,6 @@ const Profile = ({
             onCardClick={handleCardClick}
             onCardDelete={onCardDelete}
           />
-          <section className="cards">
-            {/* <ul className="cards__list">
-              {cards.map((card) => (
-                <ItemCard
-                  key={card?._id || card?.id}
-                  item={card}
-                  onSelectCard={onSelectCard}
-                />
-              ))}
-            </ul> */}
-          </section>
         </div>
       </div>
     </div>
