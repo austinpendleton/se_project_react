@@ -42,3 +42,6 @@
   align-items: center;
   flex-direction: column-reverse;
 }
+.card__like-button {
+  cursor: pointer;
+}

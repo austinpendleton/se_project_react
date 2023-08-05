@@ -16,11 +16,12 @@ export const getItemList = () => {
   }).then(processServerResponse);
 };
 
-export const addItems = ({ name, weather, imageUrl }) => {
+export const addItems = ({ name, weather, imageUrl }, token) => {
   return fetch(`${BASE_URL}/items`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
+      authorization: `Bearer ${token}`,
     },
     body: JSON.stringify({
       name,
@@ -30,11 +31,42 @@ export const addItems = ({ name, weather, imageUrl }) => {
   }).then(processServerResponse);
 };
 
-export const deleteItems = (card) => {
+export const deleteItems = (card, token) => {
   return fetch(`${BASE_URL}/items/${card}`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
+      authorization: `Bearer ${token}`,
     },
+  }).then(processServerResponse);
+};
+export const addLike = (id, token) => {
+  return fetch(`${BASE_URL}/items/${id}/likes`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+      authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify({ id }),
+  }).then(processServerResponse);
+};
+
+export const removeLike = (id, token) => {
+  return fetch(`${BASE_URL}/items/${id}/likes`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+      authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify({ id }),
+  }).then(processServerResponse);
+};
+export const signUp = ({ name, avatar, email, password }) => {
+  return fetch(`${BASE_URL}/signup`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ name, avatar, email, password }),
   }).then(processServerResponse);
 };

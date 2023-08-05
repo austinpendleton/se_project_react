@@ -1,6 +1,10 @@
 import "../blocks/ItemModal.css";
+import CurrentUserContext from "../contexts/CurrentUserContext";
+import { useContext } from "react";
 
-const ItemModal = ({ item, onClose, handleOpenConfirmModal }) => {
+const ItemModal = ({ item, onClose, handleOpenConfirmModal, onDelete }) => {
+  const currentUser = useContext(CurrentUserContext);
+  const isUser = item.owner === currentUser._id;
   return (
     <div className="item__modal">
       <div className="item__modal-content">
@@ -18,12 +22,14 @@ const ItemModal = ({ item, onClose, handleOpenConfirmModal }) => {
         <div className="item__modal-description">
           Weather type: {item?.weather}
         </div>
-        <button
-          className="modal__button-delete"
-          onClick={handleOpenConfirmModal}
-        >
-          Delete Item
-        </button>
+        {isUser && (
+          <button
+            className="modal__button-delete"
+            onClick={handleOpenConfirmModal}
+          >
+            Delete Item
+          </button>
+        )}
       </div>
     </div>
   );
