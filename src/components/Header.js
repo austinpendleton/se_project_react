@@ -12,7 +12,7 @@ const Header = ({
   onRegisterModal,
   isLoggedIn,
 }) => {
-  const currentUser = useContext(CurrentUserContext);
+  const data = useContext(CurrentUserContext);
   const currentDate = new Date().toLocaleString("default", {
     month: "long",
     day: "numeric",
@@ -41,13 +41,11 @@ const Header = ({
             </button>
           </div>
           <NavLink className="header__link" to="/profile">
-            <div className="header__name">
-              {currentUser?.name || "Not Logged In"}
-            </div>
+            <div className="header__name">{data?.name || "Not Logged In"}</div>
             <div className="header__avatar-logo">
               <img
                 className="header__avatar-image"
-                src={currentUser.avatar}
+                src={data?.avatar}
                 alt="avatar"
               />
             </div>

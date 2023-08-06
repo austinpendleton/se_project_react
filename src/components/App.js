@@ -66,28 +66,23 @@ function App() {
     setSelectedCard(card);
   };
 
+  useEffect(() => {
+    getWeatherForecast()
+      .then((data) => {
+        const temperature = parseWeatherData(data);
+        setTemp(temperature);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
   const handleToggleSwitchChange = () => {
     currentTemperatureUnit === "F"
       ? setCurrentTemperatureUnit("C")
       : setCurrentTemperatureUnit("F");
   };
 
-  useEffect(() => {
-    getWeatherForecast()
-      .then((data) => {
-        const temperature = parseWeatherData(data);
-        setTemp(temperature);
-        api
-          .getItemList()
-          .then((items) => {
-            setClothingItems(items);
-          })
-          .catch((error) => console.log(error));
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
   const handleAddItem = ({ name, imageUrl, weatherType }) => {
     const token = localStorage.getItem("jwt");
     api
