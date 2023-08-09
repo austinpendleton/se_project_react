@@ -83,10 +83,10 @@ function App() {
       : setCurrentTemperatureUnit("F");
   };
 
-  const handleAddItem = ({ name, imageUrl, weatherType }) => {
+  const handleAddItem = ({ name, imageURL, weatherType }) => {
     const token = localStorage.getItem("jwt");
     api
-      .addItems({ name, imageUrl, weather: weatherType }, token)
+      .addItems({ name, imageURL, weather: weatherType }, token)
       .then((res) => {
         setClothingItems([res.data, ...clothingItems]);
         handleCloseModal();

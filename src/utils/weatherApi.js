@@ -9,7 +9,7 @@ export const getWeatherForecast = () => {
   return weatherApi;
 };
 
-export const parseWeatherData = () => {
+export const parseWeatherData = (data) => {
   const main = data.main;
   const temperature = main && main.temp;
   return Math.ceil(temperature);

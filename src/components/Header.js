@@ -41,7 +41,7 @@ const Header = ({
             </button>
           </div>
           <NavLink className="header__link" to="/profile">
-            <div className="header__name">{data?.name || "Not Logged In"}</div>
+            <div className="header__name">{data?.name || "Not logged In"}</div>
             <div className="header__avatar-logo">
               <img
                 className="header__avatar-image"

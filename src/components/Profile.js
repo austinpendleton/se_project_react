@@ -10,6 +10,9 @@ const Profile = ({
   onAddNewClick,
   onSelectCard,
   onCreateModal,
+  isOpen,
+  logOut,
+  onCardLike,
 }) => {
   const handleCardClick = (item) => {
     onSelectCard(item);
@@ -18,7 +21,7 @@ const Profile = ({
     <div className="profile">
       <div className="profile__container">
         <div className="profile__sidebar">
-          <SideBar />
+          <SideBar isOpen={isOpen} logOut={logOut} />
         </div>
         <div className="profile__clothes">
           <ClothesSection
@@ -28,6 +31,18 @@ const Profile = ({
             onCardClick={handleCardClick}
             onCardDelete={onCardDelete}
           />
+          <section className="cards">
+            <ul className="cards__list">
+              {cards.map((card) => (
+                <ItemCard
+                  key={card._id}
+                  onCardLike={onCardLike}
+                  onSelectCard={onSelectCard}
+                  item={card}
+                />
+              ))}
+            </ul>
+          </section>
         </div>
       </div>
     </div>

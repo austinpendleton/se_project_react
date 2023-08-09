@@ -2,9 +2,15 @@ import "../blocks/ItemModal.css";
 import CurrentUserContext from "../contexts/CurrentUserContext";
 import { useContext } from "react";
 
-const ItemModal = ({ item, onClose, handleOpenConfirmModal, onDelete }) => {
+const ItemModal = ({
+  item,
+  onClose,
+  handleOpenConfirmModal,
+  onDelete,
+  data,
+}) => {
   const currentUser = useContext(CurrentUserContext);
-  const isUser = item.owner === currentUser._id;
+  const isUser = item.owner === data._id;
   return (
     <div className="item__modal">
       <div className="item__modal-content">

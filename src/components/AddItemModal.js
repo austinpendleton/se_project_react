@@ -4,27 +4,27 @@ import ModalWithForm from "./ModalWithForm";
 
 function AddItemModal({ onClose, isOpen, onAddItem }) {
   const [name, setName] = useState("");
-  const [link, setLink] = useState("");
+  const [imageURL, setImageURL] = useState("");
   const [weatherType, setWeatherType] = useState("");
 
   function handleSubmit(evt) {
     evt.preventDefault();
-    onAddItem({ name, link, weatherType });
+    onAddItem({ name, imageURL, weatherType });
   }
 
-  function handleLink(evt) {
-    setLink(evt.target.value);
-  }
+  // function handleLink(evt) {
+  //   setLink(evt.target.value);
+  // }
 
-  function handleWeatherType(evt) {
-    setWeatherType(evt.target.value);
-  }
+  // function handleWeatherType(evt) {
+  //   setWeatherType(evt.target.value);
+  // }
 
   useEffect(() => {
     if (isOpen) {
       setName("");
       setWeatherType("");
-      setLink("");
+      setImageURL("");
     }
   }, [isOpen]);
 
@@ -54,8 +54,8 @@ function AddItemModal({ onClose, isOpen, onAddItem }) {
             placeholder="Image URL"
             name="name"
             minLength="1"
-            value={link}
-            onChange={handleLink}
+            value={imageURL}
+            onChange={(e) => setImageURL(e.target.value)}
           />
         </label>
       </div>
@@ -67,7 +67,7 @@ function AddItemModal({ onClose, isOpen, onAddItem }) {
             type="radio"
             id="hot"
             value="hot"
-            onChange={handleWeatherType}
+            onChange={(e) => setWeatherType(e.target.value)}
           />
           <label>Hot</label>
         </div>
@@ -77,7 +77,7 @@ function AddItemModal({ onClose, isOpen, onAddItem }) {
             type="radio"
             id="warm"
             value="warm"
-            onChange={handleWeatherType}
+            onChange={(e) => setWeatherType(e.target.value)}
           />
           <label>Warm</label>
         </div>
@@ -87,7 +87,7 @@ function AddItemModal({ onClose, isOpen, onAddItem }) {
             type="radio"
             id="cold"
             value="cold"
-            onChange={handleWeatherType}
+            onChange={(e) => setWeatherType(e.target.value)}
           />
           <label>Cold</label>
         </div>
