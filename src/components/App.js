@@ -97,12 +97,14 @@ function App() {
   };
 
   const handleDeleteItem = (item) => {
+    console.log(item);
     const token = localStorage.getItem("jwt");
     api
+
       .deleteItems(item._id, token)
       .then(() => {
         const filteredCards = clothingItems.filter(
-          (card) => card.id !== item._id
+          (card) => card._id !== item._id
         );
         setClothingItems(filteredCards);
         handleCloseModal();
@@ -130,8 +132,7 @@ function App() {
     api
       .getItemList()
       .then((res) => {
-        console.log(res);
-        setClothingItems(res.imageURL);
+        setClothingItems(res);
       })
       .catch((error) => {
         console.log(error);

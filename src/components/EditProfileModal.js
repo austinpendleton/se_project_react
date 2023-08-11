@@ -31,7 +31,7 @@ const EditProfileModal = ({ onClose, onEditProfile }) => {
       title="Change profile data"
       buttonText="Save Changes"
       name="editProfile"
-      onClose={onClose}
+      onClick={onClose}
       onSubmit={handleSubmit}
     >
       <div className="modal__labels">
@@ -44,7 +44,7 @@ const EditProfileModal = ({ onClose, onEditProfile }) => {
             name="name"
             minLength="1"
             maxLength="300"
-            defaultValue={data.name}
+            defaultValue={data?.name}
             onChange={handleName}
           />
         </label>
@@ -56,7 +56,7 @@ const EditProfileModal = ({ onClose, onEditProfile }) => {
             placeholder="Image URL"
             name="link"
             minLength="1"
-            defaultValue={data.avatar}
+            defaultValue={data?.avatar}
             onChange={handleAvatar}
           />
         </label>

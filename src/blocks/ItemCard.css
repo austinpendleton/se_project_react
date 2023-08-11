@@ -44,4 +44,7 @@
 }
 .card__like-button {
   cursor: pointer;
+  position: relative;
+  top: 58px;
+  left: 5px;
 }

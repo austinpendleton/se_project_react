@@ -30,8 +30,8 @@ export const addItems = ({ name, weather, imageURL }, token) => {
   }).then(processServerResponse);
 };
 
-export const deleteItems = (card, token) => {
-  return fetch(`${BASE_URL}/items/${card}`, {
+export const deleteItems = (_id, token) => {
+  return fetch(`${BASE_URL}/items/${_id}`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
