@@ -130,7 +130,8 @@ function App() {
     api
       .getItemList()
       .then((res) => {
-        setClothingItems(res);
+        console.log(res);
+        setClothingItems(res.imageURL);
       })
       .catch((error) => {
         console.log(error);
@@ -187,7 +188,7 @@ function App() {
     return checkToken(token)
       .then((res) => {
         setIsLoggedIn(true);
-        setCurrentUser(res.user);
+        setCurrentUser(res.data);
         getClothingItems();
         handleCloseModal();
       })

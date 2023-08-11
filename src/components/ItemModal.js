@@ -10,7 +10,7 @@ const ItemModal = ({
   data,
 }) => {
   const currentUser = useContext(CurrentUserContext);
-  const isUser = item.owner === data._id;
+  const isUser = item.owner === currentUser._id;
   return (
     <div className="item__modal">
       <div className="item__modal-content">
