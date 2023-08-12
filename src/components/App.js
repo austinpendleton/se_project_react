@@ -273,7 +273,7 @@ function App() {
                 {activeModal === "update" && (
                   <EditProfileModal
                     onClose={handleCloseModal}
-                    editUser={handleUpdateUser}
+                    onEditProfile={handleUpdateUser}
                     isOpen={handleUpdateModal}
                   ></EditProfileModal>
                 )}
