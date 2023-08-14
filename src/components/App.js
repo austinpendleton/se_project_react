@@ -206,6 +206,7 @@ function App() {
       api
         .addLike(item.id, token)
         .then((updatedCard) => {
+          debugger;
           const cardData = updatedCard.data;
 
           setClothingItems((prevItems) =>
