@@ -2,14 +2,15 @@ import { React, useContext, useEffect, useState } from "react";
 import ModalWithForm from "./ModalWithForm";
 import CurrentUserContext from "../contexts/CurrentUserContext";
 
-const EditProfileModal = ({ onClose, onEditProfile }) => {
+const EditProfileModal = ({ onClose, onEditProfile, isOpen }) => {
   const { data } = useContext(CurrentUserContext);
   const [name, setName] = useState("");
   const [avatar, setAvatar] = useState("");
 
   function handleSubmit(evt) {
     evt.preventDefault();
-    onEditProfile({ name, avatar });
+    const token = localStorage.getItem("jwt");
+    onEditProfile({ name, avatar, token });
   }
 
   function handleName(evt) {
@@ -20,11 +21,11 @@ const EditProfileModal = ({ onClose, onEditProfile }) => {
   }
 
   useEffect(() => {
-    if (data) {
+    if (isOpen) {
       setName(data.name);
       setAvatar(data.avatar);
     }
-  }, [data]);
+  }, [data.name, data.avatar, isOpen]);
 
   return (
     <ModalWithForm
