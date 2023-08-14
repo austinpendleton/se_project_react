@@ -2,7 +2,7 @@ import React from "react";
 import ItemCard from "./ItemCard";
 import "../blocks/ClothesSection.css";
 
-const ClothesSection = ({ cards, onCardClick, onCreateModal }) => {
+const ClothesSection = ({ cards, onCardClick, onCreateModal, onCardLike }) => {
   return (
     <div className="clothes">
       <div className="clothes__container">
@@ -22,6 +22,7 @@ const ClothesSection = ({ cards, onCardClick, onCreateModal }) => {
             key={card?._id || card?.id}
             item={card}
             onSelectCard={onCardClick}
+            onCardLike={onCardLike}
           />
         ))}
       </ul>

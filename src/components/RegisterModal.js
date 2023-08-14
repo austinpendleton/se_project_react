@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import ModalWithForm from "./ModalWithForm";
 
-const RegisterModal = ({ onClose, handleRegister }) => {
+const RegisterModal = ({ onClose, handleRegister, openLoginModal }) => {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [name, setName] = React.useState("");
@@ -46,7 +46,7 @@ const RegisterModal = ({ onClose, handleRegister }) => {
     <ModalWithForm
       title="Sign Up"
       name="Signup"
-      onClose={onClose}
+      onClick={onClose}
       onSubmit={handleSubmit}
       buttonText="Next"
     >
@@ -106,7 +106,7 @@ const RegisterModal = ({ onClose, handleRegister }) => {
           />
         </label>
       </div>
-      <Link to="/signin" className="modal__link">
+      <Link to="/signin" className="modal__link" onClick={openLoginModal}>
         or Login
       </Link>
     </ModalWithForm>

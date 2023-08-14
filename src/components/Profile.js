@@ -30,6 +30,7 @@ const Profile = ({
             onAddNewClick={onAddNewClick}
             onCardClick={handleCardClick}
             onCardDelete={onCardDelete}
+            onCardLike={onCardLike}
           />
           <section className="cards">
             <ul className="cards__list">

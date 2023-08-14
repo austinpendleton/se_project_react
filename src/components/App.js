@@ -29,7 +29,7 @@ function App() {
   const [temp, setTemp] = useState(0);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [token, setToken] = useState("");
+
   const [currentUser, setCurrentUser] = useState({});
 
   const history = useHistory();
@@ -96,7 +96,7 @@ function App() {
       });
   };
 
-  const handleDeleteItem = (item) => {
+  const handleDeleteItem = (item, _id) => {
     console.log(item);
     const token = localStorage.getItem("jwt");
     api
@@ -139,10 +139,11 @@ function App() {
       });
   };
 
-  const handleUpdateUser = ({ name, avatar, token }) => {
+  const handleUpdateUser = ({ name, avatar }) => {
+    const token = localStorage.getItem("jwt");
     updateCurrentUser({ name, avatar, token })
       .then(({ data }) => {
-        setCurrentUser(data.user);
+        setCurrentUser(data);
         handleCloseModal();
       })
       .catch((error) => console.log(error));
@@ -163,15 +164,6 @@ function App() {
       .catch(console.error);
   };
 
-  // const handleSignUp = ({ name, avatar, email, password }) => {
-  //   signUp({ name, avatar, email, password })
-  //     .then((res) => {
-  //       handleCloseModal();
-  //     })
-  //     .catch((data) => {
-  //       console.log(data);
-  //     });
-  // };
   const handleSignIn = ({ email, password }) => {
     signIn({ email, password })
       .then((data) => {
@@ -209,9 +201,10 @@ function App() {
   }, [setCurrentUser, setIsLoggedIn, handleToken]);
 
   const handleLikeClick = (item, isLiked) => {
+    const token = localStorage.getItem("jwt");
     if (!isLiked) {
       api
-        .addLike({ _id: item, user: currentUser }, token)
+        .addLike(item.id, token)
         .then((updatedCard) => {
           const cardData = updatedCard.data;
 
@@ -222,7 +215,7 @@ function App() {
         .catch(console.error);
     } else {
       api
-        .removeLike({ _id: item, user: currentUser }, token)
+        .removeLike(item.id, token)
         .then((updatedCard) => {
           const cardData = updatedCard.data;
 
@@ -316,7 +309,7 @@ function App() {
               <DeleteConfirmModal
                 onDelete={handleDeleteItem}
                 handleCloseConfirmModal={handleCloseConfirmModal}
-                card={selectedCard}
+                item={selectedCard}
                 onClose={handleCloseModal}
               />
             )}

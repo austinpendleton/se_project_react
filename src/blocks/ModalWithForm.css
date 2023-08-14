@@ -22,6 +22,12 @@
   line-height: 20px;
   font-size: 16px;
 }
+.modal__content_editProfile {
+  height: 304px;
+}
+.modal__content_login {
+  height: 304px;
+}
 .modal__button-close {
   background-image: url(../images/close-button.svg);
   width: 16px;
@@ -37,7 +43,7 @@
   opacity: 0.6;
 }
 .modal__button-submit {
-  height: 36px;
+  /* height: 36px;
   width: 124px;
   margin-bottom: 36px;
   border-radius: 4px;
@@ -45,7 +51,27 @@
   color: white;
   line-height: 20px;
   font-size: 16px;
+  border: none; */
+  margin: 32px 0 0 0;
+  padding: 0;
+  background: none;
   border: none;
+  cursor: pointer;
+  height: 35px;
+  width: 124px;
+  background-color: black;
+  color: white;
+  border-radius: 4px;
+  font-size: 16px;
+  line-height: 20px;
+
+  font-weight: 700;
+}
+.modal__button-container {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  align-items: baseline;
 }
 .modal__button-submit:hover {
   cursor: pointer;

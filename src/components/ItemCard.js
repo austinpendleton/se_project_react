@@ -9,8 +9,10 @@ const ItemCard = ({ item, onSelectCard, onCardLike }) => {
     onSelectCard(item);
   };
   const context = useContext(CurrentUserContext);
+
   const isLiked = item.likes?.some((like) => like === context._id);
   const imageSrc = isLiked ? likedButton : likeButton;
+
   return (
     <div className="card">
       <img
@@ -19,7 +21,6 @@ const ItemCard = ({ item, onSelectCard, onCardLike }) => {
         className="card__image"
         onClick={handleCardClick}
       />
-
       <div className="card__container">
         <div className="card__name">{item.name}</div>
         <img

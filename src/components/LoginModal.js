@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ModalWithForm from "./ModalWithForm";
 
-const LoginModal = ({ onClose, signIn }) => {
+const LoginModal = ({ onClose, signIn, openRegisterModal }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -34,7 +34,7 @@ const LoginModal = ({ onClose, signIn }) => {
       title="Log in"
       name="login"
       buttonText="Log in"
-      onClose={onClose}
+      onClick={onClose}
       onSubmit={handleSubmit}
     >
       <div className="modal__labels">
@@ -67,7 +67,7 @@ const LoginModal = ({ onClose, signIn }) => {
           />
         </label>
       </div>
-      <Link to="/signup" className="modal__link">
+      <Link to="/signup" className="modal__link" onClick={openRegisterModal}>
         or Register
       </Link>
     </ModalWithForm>
