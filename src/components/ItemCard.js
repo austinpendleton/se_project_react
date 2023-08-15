@@ -16,7 +16,7 @@ const ItemCard = ({ item, onSelectCard, onCardLike }) => {
   return (
     <div className="card">
       <img
-        src={item.link || item.imageURL}
+        src={item.link || item.imageUrl}
         alt={item.name}
         className="card__image"
         onClick={handleCardClick}

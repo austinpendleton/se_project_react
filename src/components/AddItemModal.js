@@ -4,12 +4,12 @@ import ModalWithForm from "./ModalWithForm";
 
 function AddItemModal({ onClose, isOpen, onAddItem }) {
   const [name, setName] = useState("");
-  const [imageURL, setImageURL] = useState("");
+  const [imageUrl, setimageUrl] = useState("");
   const [weatherType, setWeatherType] = useState("");
 
   function handleSubmit(evt) {
     evt.preventDefault();
-    onAddItem({ name, imageURL, weatherType });
+    onAddItem({ name, imageUrl, weatherType });
   }
 
   // function handleLink(evt) {
@@ -24,7 +24,7 @@ function AddItemModal({ onClose, isOpen, onAddItem }) {
     if (isOpen) {
       setName("");
       setWeatherType("");
-      setImageURL("");
+      setimageUrl("");
     }
   }, [isOpen]);
 
@@ -54,8 +54,8 @@ function AddItemModal({ onClose, isOpen, onAddItem }) {
             placeholder="Image URL"
             name="name"
             minLength="1"
-            value={imageURL}
-            onChange={(e) => setImageURL(e.target.value)}
+            value={imageUrl}
+            onChange={(e) => setimageUrl(e.target.value)}
           />
         </label>
       </div>

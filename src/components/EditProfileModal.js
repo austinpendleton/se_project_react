@@ -3,7 +3,7 @@ import ModalWithForm from "./ModalWithForm";
 import CurrentUserContext from "../contexts/CurrentUserContext";
 
 const EditProfileModal = ({ onClose, onEditProfile, isOpen }) => {
-  const { data } = useContext(CurrentUserContext);
+  const data = useContext(CurrentUserContext);
   const [name, setName] = useState("");
   const [avatar, setAvatar] = useState("");
 

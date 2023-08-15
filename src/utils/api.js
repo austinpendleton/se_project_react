@@ -15,7 +15,7 @@ export const getItemList = () => {
   }).then(processServerResponse);
 };
 
-export const addItems = ({ name, weather, imageURL }, token) => {
+export const addItems = ({ name, weather, imageUrl }, token) => {
   return fetch(`${BASE_URL}/items`, {
     method: "POST",
     headers: {
@@ -25,7 +25,7 @@ export const addItems = ({ name, weather, imageURL }, token) => {
     body: JSON.stringify({
       name,
       weather,
-      imageURL,
+      imageUrl,
     }),
   }).then(processServerResponse);
 };

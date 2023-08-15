@@ -20,7 +20,7 @@ const ItemModal = ({
           onClick={onClose}
         ></button>
         <img
-          src={item?.link || item?.imageURL || ""}
+          src={item?.link || item?.imageUrl || ""}
           className="item__modal-image"
           alt={item?.name}
         />

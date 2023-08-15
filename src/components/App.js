@@ -83,10 +83,10 @@ function App() {
       : setCurrentTemperatureUnit("F");
   };
 
-  const handleAddItem = ({ name, imageURL, weatherType }) => {
+  const handleAddItem = ({ name, imageUrl, weatherType }) => {
     const token = localStorage.getItem("jwt");
     api
-      .addItems({ name, imageURL, weather: weatherType }, token)
+      .addItems({ name, imageUrl, weather: weatherType }, token)
       .then((res) => {
         setClothingItems([res.data, ...clothingItems]);
         handleCloseModal();
@@ -97,7 +97,6 @@ function App() {
   };
 
   const handleDeleteItem = (item, _id) => {
-    console.log(item);
     const token = localStorage.getItem("jwt");
     api
 
@@ -206,23 +205,23 @@ function App() {
       api
         .addLike(item.id, token)
         .then((updatedCard) => {
-          debugger;
-          const cardData = updatedCard.data;
-
-          setClothingItems((prevItems) =>
-            prevItems.map((x) => (x._id === item ? cardData : x))
-          );
+          setClothingItems((prevItems) => {
+            return prevItems.map((x) =>
+              x._id === updatedCard._id ? updatedCard : x
+            );
+          });
         })
+
         .catch(console.error);
     } else {
       api
         .removeLike(item.id, token)
         .then((updatedCard) => {
-          const cardData = updatedCard.data;
-
-          setClothingItems((prevItems) =>
-            prevItems.map((x) => (x._id === item ? cardData : x))
-          );
+          setClothingItems((prevItems) => {
+            return prevItems.map((x) =>
+              x._id === updatedCard._id ? updatedCard : x
+            );
+          });
         })
         .catch(console.error);
     }
