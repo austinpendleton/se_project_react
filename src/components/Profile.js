@@ -33,16 +33,7 @@ const Profile = ({
             onCardLike={onCardLike}
           />
           <section className="cards">
-            <ul className="cards__list">
-              {cards.map((card) => (
-                <ItemCard
-                  key={card._id}
-                  onCardLike={onCardLike}
-                  onSelectCard={onSelectCard}
-                  item={card}
-                />
-              ))}
-            </ul>
+            <ul className="cards__list"></ul>
           </section>
         </div>
       </div>

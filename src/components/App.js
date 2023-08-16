@@ -201,7 +201,7 @@ function App() {
 
   const handleLikeClick = (item, isLiked) => {
     const token = localStorage.getItem("jwt");
-    if (!isLiked) {
+    if (!item.isLiked) {
       api
         .addLike(item.id, token)
         .then((updatedCard) => {

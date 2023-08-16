@@ -45,7 +45,7 @@ const EditProfileModal = ({ onClose, onEditProfile, isOpen }) => {
             name="name"
             minLength="1"
             maxLength="300"
-            defaultValue={data?.name}
+            value={data?.name}
             onChange={handleName}
           />
         </label>
@@ -57,7 +57,7 @@ const EditProfileModal = ({ onClose, onEditProfile, isOpen }) => {
             placeholder="Image URL"
             name="link"
             minLength="1"
-            defaultValue={data?.avatar}
+            value={data?.avatar}
             onChange={handleAvatar}
           />
         </label>

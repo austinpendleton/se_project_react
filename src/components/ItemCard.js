@@ -10,7 +10,7 @@ const ItemCard = ({ item, onSelectCard, onCardLike }) => {
   };
   const context = useContext(CurrentUserContext);
 
-  const isLiked = item.likes?.some((like) => like === context._id);
+  const isLiked = item.likes.some((id) => id === context._id);
   const imageSrc = isLiked ? likedButton : likeButton;
 
   return (
