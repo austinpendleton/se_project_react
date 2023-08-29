@@ -5,7 +5,10 @@ export const processServerResponse = (res) => {
   return Promise.reject(`Error: ${res.status}`);
 };
 
-export const BASE_URL = "http://localhost:3001";
+export const BASE_URL =
+  process.env.NODE_ENV === "production"
+    ? "https://api.wtwr.netlord.de"
+    : "http://localhost:3001";
 
 export const getItemList = () => {
   return fetch(`${BASE_URL}/items`, {
