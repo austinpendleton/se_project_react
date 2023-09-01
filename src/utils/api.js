@@ -8,7 +8,7 @@ export const processServerResponse = (res) => {
 export const BASE_URL =
   process.env.NODE_ENV === "production"
     ? "https://api.wtwr.netlord.de"
-    : "http://wtwr.netlord.de";
+    : "http://localhost:3001";
 
 export const getItemList = () => {
   return fetch(`${BASE_URL}/items`, {
