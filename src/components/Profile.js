@@ -23,6 +23,7 @@ const Profile = ({
         <div className="profile__sidebar">
           <SideBar isOpen={isOpen} logOut={logOut} />
         </div>
+        <div className="profile__info"></div>
         <div className="profile__clothes">
           <ClothesSection
             cards={cards}

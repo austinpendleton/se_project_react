@@ -8,3 +8,28 @@
   line-height: 20px;
   font-size: 16px;
 }
+@media screen and (min-width: 823px) and (max-width: 1440px) {
+  .footer {
+    max-width: 768px;
+    margin: 65px auto 0 auto;
+    max-width: 768px;
+  }
+
+  .footer__author {
+    margin: 0 0 0 20px;
+  }
+
+  .footer__year {
+    margin: 0 20px 0 0;
+  }
+}
+
+@media screen and (min-width: 375px) and (max-width: 822px) {
+  .footer__author {
+    margin: 0 0 0 10px;
+  }
+
+  .footer__year {
+    margin: 0 20px 0 0;
+  }
+}

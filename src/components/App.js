@@ -17,6 +17,7 @@ import ProtectedRoute from "./ProtectedRoute";
 import EditProfileModal from "./EditProfileModal";
 import LoginModal from "./LoginModal";
 import CurrentUserContext from "../contexts/CurrentUserContext";
+
 import { checkToken, signIn, updateCurrentUser } from "../utils/auth";
 import { addLike, removeLike, signUp } from "../utils/api";
 
@@ -33,6 +34,10 @@ function App() {
   const [currentUser, setCurrentUser] = useState({});
 
   const history = useHistory();
+
+  const handleMobileClick = () => {
+    setActiveModal("mobile");
+  };
 
   const handleRegisterModal = () => {
     setActiveModal("register");
@@ -64,6 +69,11 @@ function App() {
   const handleSelectedCard = (card) => {
     setActiveModal("preview");
     setSelectedCard(card);
+  };
+  const handleOutClick = (evt) => {
+    if (evt.target === evt.currentTarget) {
+      handleCreateModal();
+    }
   };
 
   useEffect(() => {
@@ -239,6 +249,7 @@ function App() {
               onRegisterModal={handleRegisterModal}
               onLoginModal={handleLoginModal}
               isLoggedIn={isLoggedIn}
+              handleMobile={handleMobileClick}
             />
             <Switch>
               <Route exact path="/">
@@ -305,6 +316,16 @@ function App() {
                 openRegisterModal={handleRegisterModal}
               />
             )}
+            {/* {activeModal === "mobile" && (
+              <MobileMenu
+                onClose={handleCloseModal}
+                onOutClick={handleOutClick}
+                handleClick={handleCreateModal}
+                isLoggedIn={isLoggedIn}
+                handleSignin={handleSignIn}
+                handleRegister={handleRegister}
+              />
+            )} */}
             {deleteModal && (
               <DeleteConfirmModal
                 onDelete={handleDeleteItem}

@@ -24,3 +24,38 @@
   border-bottom-left-radius: 10px;
   border-top-left-radius: 10px;
 }
+@media screen and (min-width: 375px) and (max-width: 822px) {
+  .profile {
+    max-width: 375px;
+  }
+
+  .profile__content {
+    margin: 0 16px 0 16px;
+    flex-direction: column;
+  }
+
+  .profile__sidebar {
+    justify-content: center;
+  }
+
+  .profile__info {
+    justify-content: center;
+  }
+
+  .profile__name {
+    width: 325px;
+  }
+
+  .profile__subcontainer {
+    justify-content: center;
+  }
+
+  .profile__cards {
+    display: grid;
+    margin: 17px 0 0 0;
+    gap: 20px;
+    padding: 0;
+    grid-template-columns: repeat(2, 164px);
+    justify-self: end;
+  }
+}

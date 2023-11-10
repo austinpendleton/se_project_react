@@ -48,3 +48,32 @@
   top: 58px;
   left: 5px;
 }
+@media screen and (min-width: 375px) and (max-width: 822px) {
+  .card {
+    width: 164px;
+    height: 164px;
+  }
+
+  .card__container {
+    border-radius: 20px;
+    box-sizing: border-box;
+  }
+
+  .card__image {
+    height: 164px;
+  }
+
+  .card__like-button {
+    margin: 10px 0 0 14px;
+  }
+}
+
+@media screen and (min-width: 823px) and (max-width: 1440px) {
+  .card__image {
+    width: 328px;
+  }
+
+  .card__name {
+    max-width: 275px;
+  }
+}

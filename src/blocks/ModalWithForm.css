@@ -208,9 +208,40 @@
 }
 .modal__link {
   position: relative;
-  left: 105px;
+  left: 150px;
   top: 65px;
   font-size: 16px;
   color: rgba(0, 0, 0, 0.5);
   text-decoration: none;
+}
+@media screen and (min-width: 375px) and (max-width: 822px) {
+  .modal {
+    width: 375px;
+    display: flex;
+    width: 100%;
+  }
+  .modal__content {
+    width: 275px;
+  }
+
+  .modal__input {
+    width: 250px;
+  }
+
+  .modal__label {
+    font-size: 12px;
+    font-weight: 700;
+    margin: 20px 0 0 18px;
+    width: 365px;
+  }
+
+  .modal__title {
+    margin: 20px 0 0 16px;
+  }
+
+  .modal__add {
+    width: 343px;
+    height: 44px;
+    margin: 34px 16px 32px 16px;
+  }
 }
